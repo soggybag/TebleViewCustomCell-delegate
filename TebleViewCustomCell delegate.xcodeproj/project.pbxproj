@@ -12,6 +12,8 @@
 		D8E98A231D272845001F5A96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E98A211D272845001F5A96 /* Main.storyboard */; };
 		D8E98A251D272845001F5A96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E98A241D272845001F5A96 /* Assets.xcassets */; };
 		D8E98A281D272845001F5A96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E98A261D272845001F5A96 /* LaunchScreen.storyboard */; };
+		D8E98A301D2728B3001F5A96 /* DateInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E98A2F1D2728B3001F5A96 /* DateInputTableViewCell.swift */; };
+		D8E98A321D272911001F5A96 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E98A311D272911001F5A96 /* DatePickerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D8E98A241D272845001F5A96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8E98A271D272845001F5A96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8E98A291D272845001F5A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8E98A2F1D2728B3001F5A96 /* DateInputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInputTableViewCell.swift; sourceTree = "<group>"; };
+		D8E98A311D272911001F5A96 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				D8E98A1D1D272845001F5A96 /* AppDelegate.swift */,
 				D8E98A1F1D272845001F5A96 /* ViewController.swift */,
 				D8E98A211D272845001F5A96 /* Main.storyboard */,
+				D8E98A311D272911001F5A96 /* DatePickerTableViewCell.swift */,
+				D8E98A2F1D2728B3001F5A96 /* DateInputTableViewCell.swift */,
 				D8E98A241D272845001F5A96 /* Assets.xcassets */,
 				D8E98A261D272845001F5A96 /* LaunchScreen.storyboard */,
 				D8E98A291D272845001F5A96 /* Info.plist */,
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E98A201D272845001F5A96 /* ViewController.swift in Sources */,
+				D8E98A301D2728B3001F5A96 /* DateInputTableViewCell.swift in Sources */,
 				D8E98A1E1D272845001F5A96 /* AppDelegate.swift in Sources */,
+				D8E98A321D272911001F5A96 /* DatePickerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,73 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DatePickerCellDelegate {
 
+    
+    var theDate = NSDate()
+    var inputCell: DateInputTableViewCell?
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
+    
+    // MARK: DatePickerCell Delegate 
+    
+    func didSetDate(date: NSDate) {
+        theDate = date
+        // tableView.reloadData()
+        if let inputCell = inputCell {
+            inputCell.dateInput.text = "\(theDate)"
+        }
+    }
+    
+    
+    // MARK: TableView stuff
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cellId = "dateInputCell"
+        if indexPath.row == 1 {
+            cellId = "datePickerCell"
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellId)!
+        
+        if indexPath.row == 0 {
+            // Input cell
+            let inputCell = cell as! DateInputTableViewCell
+            // TODO: Format date...
+            inputCell.dateInput.text = "\(theDate)"
+            self.inputCell = inputCell
+        } else {
+            // picker cell
+            let pickerCell = cell as! DatePickerTableViewCell
+            pickerCell.delegate = self
+        }
+        
+        return cell
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
