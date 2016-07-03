@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Qq-UK-wKU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateInputCell" id="WnC-Wi-XHb" customClass="DateInputTableViewCell" customModule="TebleViewCustomCell_delegate" customModuleProvider="target">
@@ -28,12 +29,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rA1-4x-uXg">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rA1-4x-uXg">
                                                     <rect key="frame" x="8" y="7" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rA1-4x-uXg" firstAttribute="centerY" secondItem="c85-7C-O1b" secondAttribute="centerY" id="5yd-ia-bjD"/>
+                                                <constraint firstItem="rA1-4x-uXg" firstAttribute="leading" secondItem="c85-7C-O1b" secondAttribute="leadingMargin" id="7Hu-6v-6uE"/>
+                                                <constraint firstItem="rA1-4x-uXg" firstAttribute="trailing" secondItem="c85-7C-O1b" secondAttribute="trailingMargin" id="YTo-IW-sdC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateInput" destination="rA1-4x-uXg" id="ro2-u5-f4S"/>
@@ -46,8 +52,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3tK-VV-4Pq">
-                                                    <rect key="frame" x="0.0" y="-7" width="320" height="116.5"/>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3tK-VV-4Pq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="489105537.24127197">
                                                         <!--2016-07-01 22:38:57 +0000-->
                                                     </date>
@@ -56,6 +62,12 @@
                                                     </connections>
                                                 </datePicker>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="3tK-VV-4Pq" secondAttribute="bottom" id="1Mf-3t-v8E"/>
+                                                <constraint firstAttribute="trailing" secondItem="3tK-VV-4Pq" secondAttribute="trailing" id="ohA-Ox-orL"/>
+                                                <constraint firstItem="3tK-VV-4Pq" firstAttribute="top" secondItem="zpz-KH-tvE" secondAttribute="top" id="rMv-ky-0Ek"/>
+                                                <constraint firstItem="3tK-VV-4Pq" firstAttribute="leading" secondItem="zpz-KH-tvE" secondAttribute="leading" id="toe-gz-fqa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="datePicker" destination="3tK-VV-4Pq" id="iLw-LQ-DZw"/>
@@ -68,7 +80,7 @@
                         <constraints>
                             <constraint firstItem="0Qq-UK-wKU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rav-Qb-EUK"/>
                             <constraint firstItem="0Qq-UK-wKU" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="gpN-j9-ET9"/>
-                            <constraint firstItem="0Qq-UK-wKU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pgF-MX-ea3"/>
+                            <constraint firstItem="0Qq-UK-wKU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="pgF-MX-ea3"/>
                             <constraint firstAttribute="trailing" secondItem="0Qq-UK-wKU" secondAttribute="trailing" id="qRj-2t-Znh"/>
                         </constraints>
                     </view>

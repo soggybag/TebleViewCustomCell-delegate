@@ -8,10 +8,26 @@
 
 import UIKit
 
-class DateInputTableViewCell: UITableViewCell {
+
+// This class conforms to the date manager delegate. Another class
+// can call the end date was set method and pass the date. 
+
+class DateInputTableViewCell: UITableViewCell, DateManagerDelegate {
     
     
     @IBOutlet weak var dateInput: UITextField!
+    
+    
+    // Other class will delegte to this class to display a date.
+    
+    func endDateWasSet(date: NSDate) {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .FullStyle
+        formatter.timeStyle = .FullStyle
+        dateInput.text = formatter.stringFromDate(date)
+    }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

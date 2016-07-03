@@ -9,6 +9,10 @@
 import UIKit
 
 
+// This class provides a source for a date. The class declares a protocol. 
+// Any class wanting to receive the date from this class implements the 
+// didSetDate method. 
+
 
 protocol DatePickerCellDelegate {
     func didSetDate(date: NSDate)

@@ -8,8 +8,22 @@
 
 import UIKit
 
+
+
+// This class will receieve a date from another class and pass the date on
+// a third class.
+
+
+protocol DateManagerDelegate {
+    func endDateWasSet(date: NSDate)
+}
+
+
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DatePickerCellDelegate {
 
+    
+    var delegate: DateManagerDelegate?
     
     var theDate = NSDate()
     var inputCell: DateInputTableViewCell?
@@ -22,10 +36,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: DatePickerCell Delegate 
     
     func didSetDate(date: NSDate) {
+        
         theDate = date
         // tableView.reloadData()
         if let inputCell = inputCell {
             inputCell.dateInput.text = "\(theDate)"
+        }
+        
+        if let delegate = delegate {
+            delegate.endDateWasSet(date)
         }
     }
     
@@ -48,9 +67,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if indexPath.row == 0 {
             // Input cell
             let inputCell = cell as! DateInputTableViewCell
-            // TODO: Format date...
-            inputCell.dateInput.text = "\(theDate)"
-            self.inputCell = inputCell
+            // inputCell.dateInput.text = "\(theDate)"
+            // self.inputCell = inputCell
+            delegate = inputCell
         } else {
             // picker cell
             let pickerCell = cell as! DatePickerTableViewCell
@@ -62,7 +81,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            return 110
+        }
+        
+        return 40
+    }
     
     
     
